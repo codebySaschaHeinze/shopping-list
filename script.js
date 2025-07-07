@@ -34,7 +34,7 @@ function addNote() {
   let noteInput = noteInputRef.value;
 
   if (!isNaN(noteInput) && noteInput !== " ") {
-    overlayIfNotAString();
+    textIfNotAString();
   } else {
     notes.push(noteInput);
     renderNotes();
@@ -42,7 +42,7 @@ function addNote() {
   }
 }
 
-function overlayIfNotAString() {
+function textIfNotAString() {
   let notAString = document.getElementById("inputAndAddNoteButton");
   notAString.innerHTML = /*html*/ `<input
         id="noteInputBox"
