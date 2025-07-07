@@ -1,0 +1,76 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgba(161, 101, 4, 0.665);
+}
+
+button {
+  height: 36px;
+  width: 120px;
+  text-align: center;
+  background-color: rgba(146, 57, 22, 0.393);
+  border-radius: 5px;
+}
+button:hover {
+  background-color: rgba(146, 57, 22, 0.586);
+  cursor: pointer;
+}
+
+.firstNoteContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 20px 10px 20px;
+  gap: 20px;
+}
+
+.content1 {
+  background-color: rgba(146, 80, 22, 0.393);
+  border-radius: 10px;
+}
+
+.deleteButton {
+  height: 18px;
+  width: 30px;
+  text-align: center;
+  background-color: rgba(146, 57, 22, 0.393);
+  border-radius: 5px;
+  padding-bottom: 14px;
+}
+
+.deleteButton:hover {
+  background-color: rgba(194, 0, 0, 0.415);
+  cursor: pointer;
+}
+
+.trashNoteContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(120, 120, 120, 0.675);
+  padding: 15px 20px 15px 20px;
+  gap: 20px;
+  border: 2px solid rgba(255, 0, 0, 0.313);
+}
+
+.deleteFinallyButton {
+  height: 18px;
+  width: 30px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.538);
+  border-radius: 5px;
+  padding-bottom: 14px;
+  color: rgba(255, 0, 0, 0.542);
+}
+
+.deleteFinallyButton:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 0, 0);
+  cursor: pointer;
+}
