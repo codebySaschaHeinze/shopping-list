@@ -31,14 +31,25 @@ function getNoteTemplate(indexNote) {
 
 function addNote() {
   let noteInputRef = document.getElementById("noteInputBox");
-
   let noteInput = noteInputRef.value;
 
-  notes.push(noteInput);
+  if (!isNaN(noteInput) && noteInput !== " ") {
+    overlayIfNotAString();
+  } else {
+    notes.push(noteInput);
+    renderNotes();
+    noteInputRef.value = "";
+  }
+}
 
-  renderNotes();
-
-  noteInputRef.value = "";
+function overlayIfNotAString() {
+  let notAString = document.getElementById("inputAndAddNoteButton");
+  notAString.innerHTML = /*html*/ `<input
+        id="noteInputBox"
+        type="text"
+        placeholder="Was brauchen wir noch"
+      />
+      <button onclick="addNote()">Notiz hinzufügen</button><p>Ein richtiges Wort bitte</p>`;
 }
 
 function checkNote(indexNote) {
@@ -64,7 +75,7 @@ function renderTrashNotes() {
   }
 }
 function getTrashNoteTemplate(indexTrashNote) {
-  return /*html*/ `<div class="trashNoteContainer"><p>${trashNotes[indexTrashNote]}</p><button onclick="deleteFinallyNote(${indexTrashNote})" class="deleteFinallyButton">X</button></div>`;
+  return /*html*/ `<div class="trashNoteContainer"><p>${trashNotes[indexTrashNote]}</p><button onclick="deleteFinallyNote(${indexTrashNote})" class="deleteFinallyButton">&#x2718;</button></div>`;
 }
 
 function deleteFinallyNote(indexTrashNote) {

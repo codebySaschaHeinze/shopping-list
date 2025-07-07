@@ -13,7 +13,7 @@
   <body>
     <h1>Einkaufsliste</h1>
     <button onclick="renderNotes()">Notizen anzeigen</button>
-    <div class="inputAndAddNoteButton">
+    <div class="inputAndAddNoteButton" id="inputAndAddNoteButton">
       <input
         id="noteInputBox"
         type="text"
@@ -21,9 +21,9 @@
       />
       <button onclick="addNote()">Notiz hinzufügen</button>
     </div>
-
-    <div class="content1" id="content1"></div>
-
-    <div id="trashContent"><h2>Trash</h2></div>
+    <div class="needListAndBuyedList">
+      <div class="content1" id="content1"></div>
+      <div class="trashContent" id="trashContent"></div>
+    </div>
   </body>
 </html>
