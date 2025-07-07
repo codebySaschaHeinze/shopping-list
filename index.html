@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modul 7 / Teil 1</title>
+    <title>Einkaufsliste</title>
 
     <script src="script.js" defer></script>
 
@@ -11,15 +11,15 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>Notizblock</h1>
+    <h1>Einkaufsliste</h1>
     <button onclick="renderNotes()">Notizen anzeigen</button>
-    <div>
+    <div class="inputAndAddNoteButton">
       <input
         id="noteInputBox"
         type="text"
         placeholder="Was brauchen wir noch"
       />
-      <button id="" onclick="addNote()">Notiz hinzufügen</button>
+      <button onclick="addNote()">Notiz hinzufügen</button>
     </div>
 
     <div class="content1" id="content1"></div>

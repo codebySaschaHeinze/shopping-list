@@ -19,13 +19,29 @@ button:hover {
   cursor: pointer;
 }
 
+.inputAndAddNoteButton {
+  display: flex;
+  justify-content: center;
+  height: 25px;
+}
+
+.inputAndAddNoteButton button {
+  height: 25px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.inputAndAddNoteButton input {
+  height: 25px;
+  border-radius: 5px 0px 0px 5px;
+}
+
 .firstNoteContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  padding: 10px 20px 10px 20px;
+  padding: 5px 20px 5px 20px;
   gap: 20px;
 }
 
@@ -40,11 +56,11 @@ button:hover {
   text-align: center;
   background-color: rgba(146, 57, 22, 0.393);
   border-radius: 5px;
-  padding-bottom: 14px;
+  padding-bottom: 18px;
 }
 
 .deleteButton:hover {
-  background-color: rgba(194, 0, 0, 0.415);
+  background-color: rgba(39, 194, 0, 0.415);
   cursor: pointer;
 }
 
@@ -54,9 +70,7 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   background-color: rgba(120, 120, 120, 0.675);
-  padding: 15px 20px 15px 20px;
-  gap: 20px;
-  border: 2px solid rgba(255, 0, 0, 0.313);
+  padding: 5px 20px 5px 20px;
 }
 
 .deleteFinallyButton {

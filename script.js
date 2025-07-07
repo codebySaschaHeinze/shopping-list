@@ -26,7 +26,7 @@ function renderNotes() {
 }
 
 function getNoteTemplate(indexNote) {
-  return /*html*/ `<div class="firstNoteContainer"><p>+ ${notes[indexNote]}</p><button onclick="deleteNote(${indexNote})" class="deleteButton">X</button></div>`;
+  return /*html*/ `<div class="firstNoteContainer"><p>${notes[indexNote]}</p><button onclick="checkNote(${indexNote})" class="deleteButton">&#x2714;</button></div>`;
 }
 
 function addNote() {
@@ -41,7 +41,7 @@ function addNote() {
   noteInputRef.value = "";
 }
 
-function deleteNote(indexNote) {
+function checkNote(indexNote) {
   let trashNote = notes.splice(indexNote, 1);
 
   trashNotes.push(trashNote);
@@ -60,11 +60,11 @@ function renderTrashNotes() {
     indexTrashNote < trashNotes.length;
     indexTrashNote++
   ) {
-    trashContentRef.innerHTML = getTrashNoteTemplate(indexTrashNote);
+    trashContentRef.innerHTML += getTrashNoteTemplate(indexTrashNote);
   }
 }
 function getTrashNoteTemplate(indexTrashNote) {
-  return /*html*/ `<div class="trashNoteContainer"><p>+ ${trashNotes[indexTrashNote]}</p><button onclick="deleteFinallyNote(${indexTrashNote})" class="deleteFinallyButton">X</button></div>`;
+  return /*html*/ `<div class="trashNoteContainer"><p>${trashNotes[indexTrashNote]}</p><button onclick="deleteFinallyNote(${indexTrashNote})" class="deleteFinallyButton">X</button></div>`;
 }
 
 function deleteFinallyNote(indexTrashNote) {
