@@ -241,7 +241,7 @@ function getTrashDeletedTemplate(indexTrashNote) {
 function deleteTrashNotesAndAmount(indexTrashNote) {
   trashNotes.splice(indexTrashNote, 1);
   trashAmounts.splice(indexTrashNote, 1);
-
+  // Alle save...ToLocalStorage am Ende, damit der aktuelle Stand gespeichert wird
   saveNotesToLocalStorage();
   saveAmountsToLocalStorage();
   saveArchiveNotesToLocalStorage();
