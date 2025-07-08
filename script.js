@@ -1,7 +1,6 @@
 // Notizen im Browser anzeigen lassen
 
 let notes = ["Kaffee", "Würstchen", "Apfel", "Chips", "Tastatur", "Mango"];
-
 let amounts = ["1", "6", "2", "1", "1", "2"];
 let archiveNotes = [];
 let archiveAmounts = [];
@@ -115,8 +114,6 @@ function getNoteBack(indexArchiveNote) {
   renderArchiveNotes();
 }
 
-///////////////////////////////////////////////////////////////////////////////
-
 function renderTrashNotes() {
   let trashContentRef = document.getElementById("trashContent");
   trashContentRef.innerText = "";
@@ -142,10 +139,16 @@ function getTrashDeletedTemplate(indexTrashNote) {
   <p>${trashAmounts[indexTrashNote]} x ${trashNotes[indexTrashNote]}</p>
   
   <button
-    onclick="noteAndAmountToTrash(${indexTrashNote})"
+    onclick="deleteTrashNotesAndAmount(${indexTrashNote})"
     class="deleteItButton"
   >
     &#x2718;
   </button>
 </div>`;
+}
+
+function deleteTrashNotesAndAmount(indexTrashNote) {
+  trashNotes.splice(indexTrashNote, 1);
+  trashAmounts.splice(indexTrashNote, 1);
+  renderTrashNotes();
 }
