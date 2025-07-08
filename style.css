@@ -143,3 +143,32 @@ p {
   background-color: rgba(29, 129, 4, 0.67);
   cursor: pointer;
 }
+
+.trashContent {
+  background-color: rgb(101, 153, 188);
+  border-radius: 7px;
+}
+
+.trashNoteContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px 5px 20px;
+  gap: 20px;
+}
+
+.deleteItButton {
+  height: 18px;
+  width: 30px;
+  text-align: center;
+  background-color: rgba(146, 115, 22, 0.8);
+  border-radius: 30%;
+  padding-bottom: 20px;
+  padding-top: 0;
+}
+
+.trashNoteContainer p {
+  color: black;
+  text-shadow: none;
+}

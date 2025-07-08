@@ -3,8 +3,8 @@
 let notes = ["Kaffee", "Würstchen", "Apfel", "Chips", "Tastatur", "Mango"];
 
 let amounts = ["1", "6", "2", "1", "1", "2"];
-let archiveNotes = ["Teebeutel", "Weinglas"];
-let archiveAmounts = ["10", "6"];
+let archiveNotes = [];
+let archiveAmounts = [];
 let trashNotes = [];
 let trashAmounts = [];
 
@@ -78,7 +78,6 @@ function checkNote(indexNote) {
 // indexArchive wird aufgerufen
 function renderArchiveNotes() {
   let archiveContentRef = document.getElementById("archiveContent");
-
   archiveContentRef.innerText = "";
 
   for (
@@ -95,7 +94,7 @@ function getArchiveNoteTemplate(indexArchiveNote) {
   <p>${archiveAmounts[indexArchiveNote]} x ${archiveNotes[indexArchiveNote]}</p>
   
   <button
-    onclick="noteAndAmountToArchive(${indexArchiveNote})"
+    onclick="noteAndAmountToTrash(${indexArchiveNote})"
     class="archiveItButton"
   >
     &#x2718;
@@ -126,15 +125,14 @@ function renderTrashNotes() {
     indexTrashNote < trashNotes.length;
     indexTrashNote++
   ) {
-    trashContentRef.innerHTML += getTrashDeletedTemplate(indexTrashNote);
+    trashContentRef.innerHTML = getTrashDeletedTemplate(indexTrashNote);
   }
 }
 // Elemente sollen gelöscht werden
-
-function noteAndAmountToTrash(indexTrashNote) {
-  trashNotes.splice(indexTrashNote, 1);
-  trashAmounts.splice(indexTrashNote, 1);
-  getTrashDeletedTemplate();
+// Vorher aus dem Array gesplicet
+function noteAndAmountToTrash(indexToTrash) {
+  trashNotes.push(archiveNotes.splice(indexToTrash, 1)[0]);
+  trashAmounts.push(archiveAmounts.splice(indexToTrash, 1)[0]);
   renderArchiveNotes();
   renderTrashNotes();
 }
