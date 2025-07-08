@@ -18,7 +18,14 @@
     <button onclick="renderNotes()">Liste anzeigen</button>
     <div class="inputAndAddNoteButton" id="inputAndAddNoteButton">
       <input id="noteInputBox" type="text" placeholder="Ich brauche..." />
-      <button onclick="addNote()">Liste erweitern</button>
+      <input
+        class="amountInputBox"
+        id="amountInputBox"
+        type="number"
+        max="50"
+        placeholder="Menge"
+      />
+      <button onclick="addNoteAndAmount()">dazu</button>
     </div>
     <div class="needListAndBuyedList">
       <div class="content1" id="content1"></div>

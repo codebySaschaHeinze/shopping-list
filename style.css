@@ -30,25 +30,29 @@ button:hover {
   gap: 10px;
 }
 
+.amountInputBox {
+  width: 70px;
+  /* border-radius: 0px 0px 0px 0px; */
+}
+
 .inputAndAddNoteButton {
   width: 280px;
-  height: 25px;
   display: flex;
   justify-content: center;
 }
 
 .inputAndAddNoteButton button {
-  height: 25px;
-  border-radius: 0px 5px 5px 0px;
+  height: 30px;
+  /* border-radius: 0px 0px 0px 0px; */
 }
 
 .inputAndAddNoteButton input {
-  height: 25px;
-  border-radius: 5px 0px 0px 5px;
+  height: 30px;
+  /* border-radius: 0px 0px 0px 0px; */
 }
 
 .firstNoteContainer {
-  width: 280px;
+  max-width: 600px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -83,7 +87,6 @@ button:hover {
 }
 
 .trashNoteContainer {
-  width: 280px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
