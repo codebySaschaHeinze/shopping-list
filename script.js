@@ -213,7 +213,7 @@ function renderTrashNotes() {
     indexTrashNote < trashNotes.length;
     indexTrashNote++
   ) {
-    trashContentRef.innerHTML += getTrashDeletedTemplate(indexTrashNote);
+    trashContentRef.innerHTML = getTrashDeletedTemplate(indexTrashNote);
   }
 }
 // Elemente sollen gelöscht werden
