@@ -66,7 +66,7 @@ button:hover {
   border-radius: 7px;
 }
 
-.trashContent {
+.archiveContent {
   background-color: rgb(101, 153, 188);
   border-radius: 7px;
 }
@@ -86,7 +86,7 @@ button:hover {
   cursor: pointer;
 }
 
-.trashNoteContainer {
+.archiveNoteContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

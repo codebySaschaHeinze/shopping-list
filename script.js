@@ -3,8 +3,8 @@
 let notes = ["Kaffee", "Würstchen", "Apfel", "Chips", "Tastatur", "Mango"];
 
 let amounts = ["1", "6", "2", "1", "1", "2"];
-let trashNotes = [];
-let trashAmounts = [];
+let archiveNotes = [];
+let archiveAmounts = [];
 
 // Notizen rendern (Liste)
 function renderNotes() {
@@ -60,34 +60,34 @@ function textIfCorrect() {
 }
 
 function checkNote(indexNote) {
-  let trashNote = notes.splice(indexNote, 1);
-  let trashAmount = amounts.splice(indexNote, 1);
+  let archiveNote = notes.splice(indexNote, 1);
+  let archiveAmount = amounts.splice(indexNote, 1);
 
-  trashNotes.push(trashNote);
-  trashAmounts.push(trashAmount);
+  archiveNotes.push(archiveNote);
+  archiveAmounts.push(archiveAmount);
   renderNotes();
-  renderTrashNotes();
+  renderArchiveNotes();
 }
 
-function renderTrashNotes() {
-  let trashContentRef = document.getElementById("trashContent");
+function renderArchiveNotes() {
+  let archiveContentRef = document.getElementById("archiveContent");
 
-  trashContentRef.innerText = "";
+  archiveContentRef.innerText = "";
 
   for (
-    let indexTrashNote = 0;
-    indexTrashNote < trashNotes.length;
-    indexTrashNote++
+    let indexArchiveNote = 0;
+    indexArchiveNote < archiveNotes.length;
+    indexArchiveNote++
   ) {
-    trashContentRef.innerHTML += getTrashNoteTemplate(indexTrashNote);
+    archiveContentRef.innerHTML += getArchiveNoteTemplate(indexArchiveNote);
   }
 }
-function getTrashNoteTemplate(indexTrashNote) {
-  return /*html*/ `<div class="trashNoteContainer"><button onclick="getNoteBack(${indexTrashNote})" class="getNoteBackButton">&#x21BA;</button>
-  <p>${trashAmounts[indexTrashNote]} x ${trashNotes[indexTrashNote]}</p>
+function getArchiveNoteTemplate(indexArchiveNote) {
+  return /*html*/ `<div class="archiveNoteContainer"><button onclick="getNoteBack(${indexArchiveNote})" class="getNoteBackButton">&#x21BA;</button>
+  <p>${archiveAmounts[indexArchiveNote]} x ${archiveNotes[indexArchiveNote]}</p>
   
   <button
-    onclick="deleteFinallyNote(${indexTrashNote})"
+    onclick="deleteFinallyNote(${indexArchiveNote})"
     class="deleteFinallyButton"
   >
     &#x2718;
@@ -95,15 +95,15 @@ function getTrashNoteTemplate(indexTrashNote) {
 </div>`;
 }
 
-function deleteFinallyNote(indexTrashNote) {
-  trashNotes.splice(indexTrashNote, 1);
-  trashAmounts.splice(indexTrashNote, 1);
-  renderTrashNotes();
+function deleteFinallyNote(indexArchiveNote) {
+  archiveNotes.splice(indexArchiveNote, 1);
+  archiveAmounts.splice(indexArchiveNote, 1);
+  renderArchiveNotes();
 }
 
-function getNoteBack(indexTrashNote) {
-  notes.push(trashNotes.splice(indexTrashNote, 1)[0]);
-  amounts.push(trashAmounts.splice(indexTrashNote, 1)[0]);
+function getNoteBack(indexArchiveNote) {
+  notes.push(archiveNotes.splice(indexArchiveNote, 1)[0]);
+  amounts.push(archiveAmounts.splice(indexArchiveNote, 1)[0]);
   renderNotes();
-  renderTrashNotes();
+  renderArchiveNotes();
 }
