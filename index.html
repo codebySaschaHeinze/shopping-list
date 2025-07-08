@@ -17,7 +17,12 @@
     <h1>Einkaufsliste</h1>
     <button onclick="renderNotes()">Liste anzeigen</button>
     <div class="inputAndAddNoteButton" id="inputAndAddNoteButton">
-      <input id="noteInputBox" type="text" placeholder="Ich brauche..." />
+      <input
+        id="noteInputBox"
+        type="text"
+        maxlength="30"
+        placeholder="Ich brauche..."
+      />
       <input
         class="amountInputBox"
         id="amountInputBox"
@@ -28,7 +33,7 @@
       <button onclick="addNoteAndAmount()">dazu</button>
     </div>
     <div class="needListAndBuyedList">
-      <div class="content1" id="content1"></div>
+      <div class="notesContent" id="notesContent"></div>
       <p>Archiv</p>
       <div class="archiveContent" id="archiveContent"></div>
       <p>Papierkorb</p>

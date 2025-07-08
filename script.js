@@ -96,7 +96,7 @@ function saveArchiveAmountsToLocalStorage() {
 
 // Notizen rendern (Array)
 function renderNotes() {
-  let contentRef = document.getElementById("content1");
+  let contentRef = document.getElementById("notesContent");
   contentRef.innerHTML = "";
   // "notes" weiß nun, wie es aufgebaut ist
   for (let indexNote = 0; indexNote < notes.length; indexNote++) {
@@ -105,7 +105,7 @@ function renderNotes() {
 }
 // Mit dem "Werkzeug" indexNote öffnet ("return") beim entsprechenden Befehl
 function getNoteTemplate(indexNote) {
-  return /*html*/ `<div class="NotesContainer"><p>${amounts[indexNote]} x ${notes[indexNote]}</p><button onclick="checkNote(${indexNote})" class="deleteButton">&#x2714;</button></div>`;
+  return /*html*/ `<div class="notesContainer"><p>${amounts[indexNote]} x ${notes[indexNote]}</p><button onclick="checkNote(${indexNote})" class="deleteButton">&#x2714;</button></div>`;
 }
 // Notiz und Menge hinzufügen
 function addNoteAndAmount() {
@@ -136,7 +136,7 @@ function textIfCorrect() {
   correctValidation.innerHTML = /*html*/ `<input
         id="noteInputBox"
         type="text"
-        
+        maxlength="30"
         placeholder="Ich brauche..."
       />
       <input
