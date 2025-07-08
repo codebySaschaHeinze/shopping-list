@@ -60,7 +60,7 @@ p {
   /* border-radius: 0px 0px 0px 0px; */
 }
 
-.firstNoteContainer {
+.NotesContainer {
   max-width: 600px;
   display: flex;
   flex-direction: row;
@@ -70,7 +70,7 @@ p {
   gap: 20px;
 }
 
-.firstNoteContainer p {
+.NotesContainer p {
   color: black;
   text-shadow: none;
 }

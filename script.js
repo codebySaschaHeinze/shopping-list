@@ -105,7 +105,7 @@ function renderNotes() {
 }
 // Mit dem "Werkzeug" indexNote öffnet ("return") beim entsprechenden Befehl
 function getNoteTemplate(indexNote) {
-  return /*html*/ `<div class="firstNoteContainer"><p>${amounts[indexNote]} x ${notes[indexNote]}</p><button onclick="checkNote(${indexNote})" class="deleteButton">&#x2714;</button></div>`;
+  return /*html*/ `<div class="NotesContainer"><p>${amounts[indexNote]} x ${notes[indexNote]}</p><button onclick="checkNote(${indexNote})" class="deleteButton">&#x2714;</button></div>`;
 }
 // Notiz und Menge hinzufügen
 function addNoteAndAmount() {
@@ -241,6 +241,11 @@ function getTrashDeletedTemplate(indexTrashNote) {
 function deleteTrashNotesAndAmount(indexTrashNote) {
   trashNotes.splice(indexTrashNote, 1);
   trashAmounts.splice(indexTrashNote, 1);
+
+  saveNotesToLocalStorage();
+  saveAmountsToLocalStorage();
+  saveArchiveNotesToLocalStorage();
+  saveArchiveAmountsToLocalStorage();
   saveTrashNotesToLocalStorage();
   saveArchiveAmountsToLocalStorage();
   renderTrashNotes();
