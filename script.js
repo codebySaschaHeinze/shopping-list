@@ -8,8 +8,9 @@ let archiveAmounts = [];
 
 // Notizen rendern (Liste)
 function renderNotes() {
+  localStorage.setItem("myDog", "Klaus-Peter");
+  getFromLocalStorage();
   let contentRef = document.getElementById("content1");
-
   contentRef.innerHTML = "";
 
   for (let indexNote = 0; indexNote < notes.length; indexNote++) {
