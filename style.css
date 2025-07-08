@@ -4,7 +4,12 @@ body {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background-color: rgba(0, 57, 94, 0.616);
+  background-color: rgb(86, 147, 187);
+}
+
+h1 {
+  color: rgba(139, 106, 6, 0.789);
+  text-shadow: 1px 1px black;
 }
 
 button {
@@ -15,7 +20,7 @@ button {
   border-radius: 5px;
 }
 button:hover {
-  background-color: rgba(146, 57, 22, 0.586);
+  background-color: rgba(125, 98, 17, 0.8);
   cursor: pointer;
 }
 
@@ -26,9 +31,10 @@ button:hover {
 }
 
 .inputAndAddNoteButton {
+  width: 280px;
+  height: 25px;
   display: flex;
   justify-content: center;
-  height: 25px;
 }
 
 .inputAndAddNoteButton button {
@@ -42,6 +48,7 @@ button:hover {
 }
 
 .firstNoteContainer {
+  width: 280px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -51,13 +58,13 @@ button:hover {
 }
 
 .content1 {
-  background-color: rgba(0, 56, 94, 0.5);
-  border-radius: 10px;
+  background-color: rgb(101, 153, 188);
+  border-radius: 7px;
 }
 
 .trashContent {
-  background-color: rgba(0, 57, 94, 0.5);
-  border-radius: 10px;
+  background-color: rgb(101, 153, 188);
+  border-radius: 7px;
 }
 
 .deleteButton {
@@ -65,17 +72,18 @@ button:hover {
   width: 30px;
   text-align: center;
   background-color: rgba(146, 115, 22, 0.8);
-  border-radius: 5px;
+  border-radius: 30%;
   padding-bottom: 20px;
   padding-top: 0;
 }
 
 .deleteButton:hover {
-  background-color: rgba(39, 194, 0, 0.415);
+  background-color: rgba(29, 129, 4, 0.67);
   cursor: pointer;
 }
 
 .trashNoteContainer {
+  width: 280px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -89,14 +97,14 @@ button:hover {
   width: 30px;
   text-align: center;
   background-color: rgba(146, 115, 22, 0.8);
-  border-radius: 5px;
+  border-radius: 30%;
   padding-bottom: 20px;
   padding-top: 0;
 }
 
 .deleteFinallyButton:hover {
   color: rgb(255, 255, 255);
-  background-color: rgb(201, 1, 1);
+  background-color: rgb(143, 13, 13);
   cursor: pointer;
 }
 
@@ -105,12 +113,12 @@ button:hover {
   width: 30px;
   text-align: center;
   background-color: rgba(146, 115, 22, 0.8);
-  border-radius: 5px;
+  border-radius: 30%;
   padding-bottom: 0px;
 }
 
 .getNoteBackButton:hover {
   color: rgb(255, 255, 255);
-  background-color: rgba(39, 194, 0, 0.415);
+  background-color: rgba(29, 129, 4, 0.67);
   cursor: pointer;
 }

@@ -1,16 +1,13 @@
 // Notizen im Browser anzeigen lassen
 
 let notes = [
-  "Gurke",
-  "Zwiebeln",
-  "Pfanne",
-  "Tampons",
+  "Kaffee",
+  "Würstchen",
+  "Taschentücher",
   "Chips",
-  "Zwirn",
+  "Tastatur",
+  "Tampons",
   "Schnürsenkel",
-  "Mehl",
-  "Kartoffeln",
-  "Pflaster",
 ];
 
 let trashNotes = [];
@@ -24,7 +21,6 @@ function renderNotes() {
     contentRef.innerHTML += getNoteTemplate(indexNote);
   }
 }
-
 function getNoteTemplate(indexNote) {
   return /*html*/ `<div class="firstNoteContainer"><p>${notes[indexNote]}</p><button onclick="checkNote(${indexNote})" class="deleteButton">&#x2714;</button></div>`;
 }
@@ -49,7 +45,7 @@ function textIfNotAString() {
         type="text"
         placeholder="Was brauchen wir noch"
       />
-      <button onclick="addNote()">Notiz hinzufügen</button>`;
+      <button onclick="addNote()">Liste erweitern</button>`;
 }
 
 function checkNote(indexNote) {
