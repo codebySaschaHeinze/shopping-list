@@ -4,14 +4,14 @@ body {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background-color: rgba(161, 101, 4, 0.665);
+  background-color: rgba(0, 57, 94, 0.616);
 }
 
 button {
   height: 36px;
   width: 120px;
   text-align: center;
-  background-color: rgba(146, 57, 22, 0.393);
+  background-color: rgba(146, 115, 22, 0.8);
   border-radius: 5px;
 }
 button:hover {
@@ -51,12 +51,12 @@ button:hover {
 }
 
 .content1 {
-  background-color: rgba(146, 80, 22, 0.393);
+  background-color: rgba(0, 56, 94, 0.5);
   border-radius: 10px;
 }
 
 .trashContent {
-  background-color: rgba(146, 80, 22, 0.393);
+  background-color: rgba(0, 57, 94, 0.5);
   border-radius: 10px;
 }
 
@@ -64,7 +64,7 @@ button:hover {
   height: 18px;
   width: 30px;
   text-align: center;
-  background-color: rgba(146, 57, 22, 0.393);
+  background-color: rgba(146, 115, 22, 0.8);
   border-radius: 5px;
   padding-bottom: 20px;
   padding-top: 0;
@@ -88,7 +88,7 @@ button:hover {
   height: 18px;
   width: 30px;
   text-align: center;
-  background-color: rgba(146, 57, 22, 0.393);
+  background-color: rgba(146, 115, 22, 0.8);
   border-radius: 5px;
   padding-bottom: 20px;
   padding-top: 0;
@@ -96,7 +96,7 @@ button:hover {
 
 .deleteFinallyButton:hover {
   color: rgb(255, 255, 255);
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(201, 1, 1);
   cursor: pointer;
 }
 
@@ -104,7 +104,7 @@ button:hover {
   height: 23px;
   width: 30px;
   text-align: center;
-  background-color: rgba(146, 57, 22, 0.393);
+  background-color: rgba(146, 115, 22, 0.8);
   border-radius: 5px;
   padding-bottom: 0px;
 }
