@@ -21,7 +21,7 @@ button:hover {
 
 .needListAndBuyedList {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -97,5 +97,20 @@ button:hover {
 .deleteFinallyButton:hover {
   color: rgb(255, 255, 255);
   background-color: rgb(255, 0, 0);
+  cursor: pointer;
+}
+
+.getNoteBackButton {
+  height: 23px;
+  width: 30px;
+  text-align: center;
+  background-color: rgba(146, 57, 22, 0.393);
+  border-radius: 5px;
+  padding-bottom: 0px;
+}
+
+.getNoteBackButton:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(39, 194, 0, 0.415);
   cursor: pointer;
 }

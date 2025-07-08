@@ -4,8 +4,8 @@ let notes = [
   "Gurke",
   "Zwiebeln",
   "Pfanne",
-  "Chips",
   "Tampons",
+  "Chips",
   "Zwirn",
   "Schnürsenkel",
   "Mehl",
@@ -49,7 +49,7 @@ function textIfNotAString() {
         type="text"
         placeholder="Was brauchen wir noch"
       />
-      <button onclick="addNote()">Notiz hinzufügen</button><p>Ein richtiges Wort bitte</p>`;
+      <button onclick="addNote()">Notiz hinzufügen</button>`;
 }
 
 function checkNote(indexNote) {
@@ -75,13 +75,29 @@ function renderTrashNotes() {
   }
 }
 function getTrashNoteTemplate(indexTrashNote) {
-  return /*html*/ `<div class="trashNoteContainer"><p>${trashNotes[indexTrashNote]}</p><button onclick="deleteFinallyNote(${indexTrashNote})" class="deleteFinallyButton">&#x2718;</button></div>`;
+  return /*html*/ `<div class="trashNoteContainer"><button onclick="getNoteBack()" class="getNoteBackButton">&#x21BA;</button>
+  <p>${trashNotes[indexTrashNote]}</p>
+  
+  <button
+    onclick="deleteFinallyNote(${indexTrashNote})"
+    class="deleteFinallyButton"
+  >
+    &#x2718;
+  </button>
+</div>`;
 }
 
 function deleteFinallyNote(indexTrashNote) {
-  let trashNote = trashNotes.splice(indexTrashNote, 1);
+  trashNotes.splice(indexTrashNote, 1);
 
-  trashNotes.slice(trashNote, 1);
+  renderTrashNotes();
+}
 
+// muss noch
+
+function getNoteBack(indexTrashNote) {
+  notes.push(trashNotes.splice(indexTrashNote, 1)[0]);
+
+  renderNotes();
   renderTrashNotes();
 }
