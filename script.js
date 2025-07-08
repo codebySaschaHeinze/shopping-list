@@ -1,7 +1,7 @@
 // Notizen im Browser anzeigen lassen
 
-let notes = ["Kaffee", "Würstchen", "Apfel", "Chips", "Tastatur", "Mango"];
-let amounts = ["1", "6", "2", "1", "1", "2"];
+let notes = [];
+let amounts = [];
 let archiveNotes = [];
 let archiveAmounts = [];
 let trashNotes = [];
