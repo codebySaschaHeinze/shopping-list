@@ -61,7 +61,7 @@ p {
 }
 
 .notesContainer {
-  width: clamp(280px, 50vw, 600px);
+  width: clamp(280px, 50vw, 500px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -71,7 +71,7 @@ p {
 }
 
 .archiveNoteContainer {
-  width: clamp(280px, 50vw, 600px);
+  width: clamp(280px, 50vw, 500px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -81,7 +81,7 @@ p {
 }
 
 .trashNoteContainer {
-  width: clamp(280px, 50vw, 600px);
+  width: clamp(280px, 50vw, 500px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;

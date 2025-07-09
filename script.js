@@ -121,6 +121,8 @@ function addNoteAndAmount() {
   // Falls if nicht zutrifft, also alles gut ist, werden die Inputwerte verarbeitet und ausgegeben (könnte man andersherum schreiben)
   notes.push(noteInput);
   amounts.push(noteAmount);
+  saveNotesToLocalStorage();
+  saveAmountsToLocalStorage();
   renderNotes();
   noteInputRef.value = "";
   noteAmountRef.value = "";
@@ -150,8 +152,8 @@ function textIfCorrect() {
 // Die Menge soll aus indexAmount ins archiveAmount
 function checkNote(indexNote) {
   // Nur jeweils ein Teil der Arrays
-  let archiveNote = notes.splice(indexNote, 1);
-  let archiveAmount = amounts.splice(indexNote, 1);
+  let archiveNote = notes.splice(indexNote, 1)[0];
+  let archiveAmount = amounts.splice(indexNote, 1)[0];
   // Von
   archiveNotes.push(archiveNote);
   archiveAmounts.push(archiveAmount);
@@ -181,14 +183,18 @@ function getArchiveNoteTemplate(indexArchiveNote) {
 }
 // Notizen und Mengen sollen ins Archiv übergeben werden
 function noteAndAmountToArchive(indexArchiveNote) {
-  archiveNotes.splice(indexArchiveNote, 1);
-  archiveAmounts.splice(indexArchiveNote, 1);
+  archiveNotes.splice(indexArchiveNote, 1)[0];
+  archiveAmounts.splice(indexArchiveNote, 1)[0];
+  saveArchiveNotesToLocalStorage();
+  saveArchiveAmountsToLocalStorage();
   renderArchiveNotes();
 }
 // Archivierte Notizen und Mengen sollen zurückgeholt werden
 function getNoteBack(indexArchiveNote) {
   notes.push(archiveNotes.splice(indexArchiveNote, 1)[0]);
   amounts.push(archiveAmounts.splice(indexArchiveNote, 1)[0]);
+  saveArchiveNotesToLocalStorage();
+  saveArchiveAmountsToLocalStorage();
   renderNotes();
   renderArchiveNotes();
 }
@@ -229,9 +235,10 @@ function getTrashDeletedTemplate(indexTrashNote) {
 function deleteTrashNotesAndAmount(indexTrashNote) {
   trashNotes.splice(indexTrashNote, 1);
   trashAmounts.splice(indexTrashNote, 1);
+  renderArchiveNotes();
+  renderTrashNotes();
   // Alle save...ToLocalStorage am Ende, damit der aktuelle Stand gespeichert wird
-  saveNotesToLocalStorage();
-  saveAmountsToLocalStorage();
+
   saveArchiveNotesToLocalStorage();
   saveArchiveAmountsToLocalStorage();
   saveTrashNotesToLocalStorage();
