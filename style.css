@@ -28,6 +28,7 @@ button:hover {
 }
 
 p {
+  font-size: 1.7rem;
   align-self: center;
   color: rgba(139, 106, 6, 0.789);
   text-shadow: 0.5px 0.5px black;
@@ -61,9 +62,9 @@ p {
 }
 
 .notesContainer {
-  width: clamp(280px, 50vw, 500px);
+  width: clamp(280px, 40vw, 500px);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 5px 5px 5px 5px;
@@ -71,9 +72,9 @@ p {
 }
 
 .archiveNoteContainer {
-  width: clamp(280px, 50vw, 500px);
+  width: clamp(280px, 40vw, 500px);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 5px 5px 5px 5px;
@@ -81,9 +82,9 @@ p {
 }
 
 .trashNoteContainer {
-  width: clamp(280px, 50vw, 500px);
+  width: clamp(280px, 40vw, 500px);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 5px 5px 5px 5px;
@@ -91,25 +92,26 @@ p {
 }
 
 .notesContainer p {
+  font-size: 1rem;
   color: black;
   text-shadow: none;
   padding: 0;
 }
 
 .notesContent {
-  width: clamp(280px, 50vw, 500px);
+  width: clamp(280px, 40vw, 500px);
   background-color: rgb(101, 153, 188);
   border-radius: 7px;
 }
 
 .archiveContent {
-  width: clamp(280px, 50vw, 500px);
+  width: clamp(280px, 40vw, 500px);
   background-color: rgb(101, 153, 188);
   border-radius: 7px;
 }
 
 .trashContent {
-  width: clamp(280px, 50vw, 500px);
+  width: clamp(280px, 40vw, 500px);
   background-color: rgb(101, 153, 188);
   border-radius: 7px;
 }
@@ -130,6 +132,7 @@ p {
 }
 
 .archiveNoteContainer p {
+  font-size: 1rem;
   color: black;
   text-shadow: none;
 }
@@ -175,7 +178,14 @@ p {
   padding-top: 0;
 }
 
+.deleteItButton:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(143, 13, 13);
+  cursor: pointer;
+}
+
 .trashNoteContainer p {
+  font-size: 1rem;
   color: black;
   text-shadow: none;
 }
