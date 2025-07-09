@@ -117,6 +117,7 @@ function addNoteAndAmount() {
   if (!noteInput || noteAmount < 1 || isNaN(noteAmount)) {
     // ... werden die Inputboxen geleert und leer dargestellt
     textIfCorrect();
+    return;
   }
   // Falls if nicht zutrifft, also alles gut ist, werden die Inputwerte verarbeitet und ausgegeben (könnte man andersherum schreiben)
   notes.push(noteInput);
