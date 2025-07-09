@@ -90,7 +90,7 @@ function saveTrashNotesToLocalStorage() {
   localStorage.setItem("trashNotes", JSON.stringify(trashNotes));
 }
 
-function saveArchiveAmountsToLocalStorage() {
+function saveTrashAmountsToLocalStorage() {
   localStorage.setItem("trashAmounts", JSON.stringify(trashAmounts));
 }
 
@@ -118,13 +118,11 @@ function addNoteAndAmount() {
   if (!noteInput || noteAmount < 1 || isNaN(noteAmount)) {
     // ... werden die Inputboxen geleert und leer dargestellt
     textIfCorrect();
-    return;
+    // return;
   }
   // Falls if nicht zutrifft, also alles gut, werden die Inputwerte verarbeitet und ausgegeben
   notes.push(noteInput);
   amounts.push(noteAmount);
-  saveNotesToLocalStorage();
-  saveAmountsToLocalStorage();
   renderNotes();
   noteInputRef.value = "";
   noteAmountRef.value = "";
@@ -161,8 +159,6 @@ function checkNote(indexNote) {
   archiveAmounts.push(archiveAmount);
   renderNotes();
   // soll aktiviert werden
-  saveArchiveNotesToLocalStorage();
-  saveArchiveAmountsToLocalStorage();
   renderArchiveNotes();
 }
 // indexArchive wird aufgerufen
@@ -247,6 +243,6 @@ function deleteTrashNotesAndAmount(indexTrashNote) {
   saveArchiveNotesToLocalStorage();
   saveArchiveAmountsToLocalStorage();
   saveTrashNotesToLocalStorage();
-  saveArchiveAmountsToLocalStorage();
+  saveTrashAmountsToLocalStorage();
   renderTrashNotes();
 }
