@@ -109,7 +109,6 @@ function addNoteAndAmount() {
 function checkNote(indexNote) {
   let archiveNote = notes.splice(indexNote, 1)[0];
   let archiveAmount = amounts.splice(indexNote, 1)[0];
-
   archiveNotes.push(archiveNote);
   archiveAmounts.push(archiveAmount);
   saveAllToLocalStorage();
@@ -119,7 +118,7 @@ function checkNote(indexNote) {
 
 function renderArchiveNotes() {
   let archiveContentRef = document.getElementById("archiveContent");
-  archiveContentRef.innerText = "";
+  archiveContentRef.innerHTML = "";
 
   for (
     let indexArchiveNote = 0;
@@ -147,7 +146,7 @@ function getNoteBack(indexArchiveNote) {
 
 function renderTrashNotes() {
   let trashContentRef = document.getElementById("trashContent");
-  trashContentRef.innerText = "";
+  trashContentRef.innerHTML = "";
   for (
     let indexTrashNote = 0;
     indexTrashNote < trashNotes.length;
