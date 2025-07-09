@@ -6,7 +6,7 @@ let archiveNotes = [];
 let archiveAmounts = [];
 let trashNotes = [];
 let trashAmounts = [];
-
+// onload() - Alle Local Storage Speicherungen
 function init() {
   getNotesFromLocalStorage();
   getAmountsFromLocalStorage();
@@ -15,7 +15,7 @@ function init() {
   getTrashNotesFromLocalStorage();
   getTrashAmountsFromLocalStorage();
 }
-
+// Holt gespeicherte Notizen AUS! dem Local Storage
 function getNotesFromLocalStorage() {
   let myNotes = JSON.parse(localStorage.getItem("notes"));
   if (myNotes === null) {
@@ -69,7 +69,7 @@ function getTrashAmountsFromLocalStorage() {
     trashAmounts = myTrashAmounts;
   }
 }
-
+// Array IN! den Local Storage
 function saveNotesToLocalStorage() {
   localStorage.setItem("notes", JSON.stringify(notes));
 }
@@ -103,7 +103,7 @@ function renderNotes() {
     contentRef.innerHTML += getNoteTemplate(indexNote);
   }
 }
-// Mit dem "Werkzeug" indexNote öffnet ("return") beim entsprechenden Befehl
+// Mit dem "Werkzeug" indexNote öffnet ("return") beim entsprechenden Befehl (function)
 function getNoteTemplate(indexNote) {
   return /*html*/ `<div class="notesContainer"><p>${amounts[indexNote]} x ${notes[indexNote]}</p><button onclick="checkNote(${indexNote})" class="deleteButton">&#x2714;</button></div>`;
 }
@@ -111,16 +111,14 @@ function getNoteTemplate(indexNote) {
 function addNoteAndAmount() {
   let noteInputRef = document.getElementById("noteInputBox");
   let noteInput = noteInputRef.value;
-
   let noteAmountRef = document.getElementById("amountInputBox");
   let noteAmount = noteAmountRef.value;
   // Falls kein Input oder keine Menge oder Menge ist keine Number...
   if (!noteInput || noteAmount < 1 || isNaN(noteAmount)) {
     // ... werden die Inputboxen geleert und leer dargestellt
     textIfCorrect();
-    // return;
   }
-  // Falls if nicht zutrifft, also alles gut, werden die Inputwerte verarbeitet und ausgegeben
+  // Falls if nicht zutrifft, also alles gut ist, werden die Inputwerte verarbeitet und ausgegeben (könnte man andersherum schreiben)
   notes.push(noteInput);
   amounts.push(noteAmount);
   renderNotes();
@@ -128,7 +126,7 @@ function addNoteAndAmount() {
   noteAmountRef.value = "";
 }
 
-// Validierung ob korrekte Eingabe
+// Ist alles gut (if trifft nicht zu) - ausführung
 function textIfCorrect() {
   let correctValidation = document.getElementById("inputAndAddNoteButton");
   correctValidation.innerHTML = /*html*/ `<input
@@ -176,16 +174,10 @@ function renderArchiveNotes() {
 }
 // So soll das Archiv aussehen, wenn es aktiviert wurde
 function getArchiveNoteTemplate(indexArchiveNote) {
-  return /*html*/ `<div class="archiveNoteContainer"><button onclick="getNoteBack(${indexArchiveNote})" class="getNoteBackButton">&#x21BA;</button>
-  <p>${archiveAmounts[indexArchiveNote]} x ${archiveNotes[indexArchiveNote]}</p>
-  
-  <button
-    onclick="noteAndAmountToTrash(${indexArchiveNote})"
-    class="archiveItButton"
-  >
-    &#x2718;
-  </button>
-</div>`;
+  return /*html*/ `<div class="archiveNoteContainer">
+  <p>${archiveAmounts[indexArchiveNote]} x ${archiveNotes[indexArchiveNote]}</p><div class="getBackAndToTrashButton"><button onclick="getNoteBack(${indexArchiveNote})" class="getNoteBackButton">&#x21BA;</button>
+  <button onclick="noteAndAmountToTrash(${indexArchiveNote})" class="archiveItButton">&#x2718;</button></div>
+  </div>`;
 }
 // Notizen und Mengen sollen ins Archiv übergeben werden
 function noteAndAmountToArchive(indexArchiveNote) {
@@ -209,7 +201,7 @@ function renderTrashNotes() {
     indexTrashNote < trashNotes.length;
     indexTrashNote++
   ) {
-    trashContentRef.innerHTML = getTrashDeletedTemplate(indexTrashNote);
+    trashContentRef.innerHTML += getTrashDeletedTemplate(indexTrashNote);
   }
 }
 // Elemente sollen gelöscht werden

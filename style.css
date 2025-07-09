@@ -97,13 +97,19 @@ p {
 }
 
 .notesContent {
-  width: clamp(280px, 50vw, 600px);
+  width: clamp(280px, 50vw, 500px);
   background-color: rgb(101, 153, 188);
   border-radius: 7px;
 }
 
 .archiveContent {
-  width: clamp(280px, 50vw, 600px);
+  width: clamp(280px, 50vw, 500px);
+  background-color: rgb(101, 153, 188);
+  border-radius: 7px;
+}
+
+.trashContent {
+  width: clamp(280px, 50vw, 500px);
   background-color: rgb(101, 153, 188);
   border-radius: 7px;
 }
@@ -157,12 +163,6 @@ p {
   color: rgb(255, 255, 255);
   background-color: rgba(29, 129, 4, 0.67);
   cursor: pointer;
-}
-
-.trashContent {
-  width: clamp(280px, 50vw, 600px);
-  background-color: rgb(101, 153, 188);
-  border-radius: 7px;
 }
 
 .deleteItButton {
