@@ -12,6 +12,9 @@ function init() {
   getArchiveAmountsFromLocalStorage();
   getTrashNotesFromLocalStorage();
   getTrashAmountsFromLocalStorage();
+  renderNotes();
+  renderArchiveNotes();
+  renderTrashNotes();
 }
 
 function getNotesFromLocalStorage() {
@@ -67,28 +70,12 @@ function getTrashAmountsFromLocalStorage() {
     trashAmounts = myTrashAmounts;
   }
 }
-
-function saveNotesToLocalStorage() {
+function saveAllToLocalStorage() {
   localStorage.setItem("notes", JSON.stringify(notes));
-}
-
-function saveAmountsToLocalStorage() {
   localStorage.setItem("amounts", JSON.stringify(amounts));
-}
-
-function saveArchiveNotesToLocalStorage() {
   localStorage.setItem("archiveNotes", JSON.stringify(archiveNotes));
-}
-
-function saveArchiveAmountsToLocalStorage() {
   localStorage.setItem("archiveAmounts", JSON.stringify(archiveAmounts));
-}
-
-function saveTrashNotesToLocalStorage() {
   localStorage.setItem("trashNotes", JSON.stringify(trashNotes));
-}
-
-function saveTrashAmountsToLocalStorage() {
   localStorage.setItem("trashAmounts", JSON.stringify(trashAmounts));
 }
 
@@ -113,8 +100,7 @@ function addNoteAndAmount() {
 
   notes.push(noteInput);
   amounts.push(noteAmount);
-  saveNotesToLocalStorage();
-  saveAmountsToLocalStorage();
+  saveAllToLocalStorage();
   renderNotes();
   noteInputRef.value = "";
   noteAmountRef.value = "";
@@ -126,6 +112,7 @@ function checkNote(indexNote) {
 
   archiveNotes.push(archiveNote);
   archiveAmounts.push(archiveAmount);
+  saveAllToLocalStorage();
   renderNotes();
   renderArchiveNotes();
 }
@@ -146,16 +133,14 @@ function renderArchiveNotes() {
 function noteAndAmountToArchive(indexArchiveNote) {
   archiveNotes.splice(indexArchiveNote, 1)[0];
   archiveAmounts.splice(indexArchiveNote, 1)[0];
-  saveArchiveNotesToLocalStorage();
-  saveArchiveAmountsToLocalStorage();
+  saveAllToLocalStorage();
   renderArchiveNotes();
 }
 
 function getNoteBack(indexArchiveNote) {
   notes.push(archiveNotes.splice(indexArchiveNote, 1)[0]);
   amounts.push(archiveAmounts.splice(indexArchiveNote, 1)[0]);
-  saveArchiveNotesToLocalStorage();
-  saveArchiveAmountsToLocalStorage();
+  saveAllToLocalStorage();
   renderNotes();
   renderArchiveNotes();
 }
@@ -175,6 +160,7 @@ function renderTrashNotes() {
 function noteAndAmountToTrash(indexToTrash) {
   trashNotes.push(archiveNotes.splice(indexToTrash, 1)[0]);
   trashAmounts.push(archiveAmounts.splice(indexToTrash, 1)[0]);
+  saveAllToLocalStorage();
   renderArchiveNotes();
   renderTrashNotes();
 }
@@ -182,12 +168,8 @@ function noteAndAmountToTrash(indexToTrash) {
 function deleteTrashNotesAndAmount(indexTrashNote) {
   trashNotes.splice(indexTrashNote, 1);
   trashAmounts.splice(indexTrashNote, 1);
+  saveAllToLocalStorage();
+  renderNotes();
   renderArchiveNotes();
-  renderTrashNotes();
-
-  saveArchiveNotesToLocalStorage();
-  saveArchiveAmountsToLocalStorage();
-  saveTrashNotesToLocalStorage();
-  saveTrashAmountsToLocalStorage();
   renderTrashNotes();
 }
