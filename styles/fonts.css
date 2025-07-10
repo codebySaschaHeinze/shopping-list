@@ -1,0 +1,33 @@
+h1 {
+  color: rgba(139, 106, 6, 0.789);
+  text-shadow: 1px 1px black;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.2rem;
+  align-self: center;
+  color: rgba(139, 106, 6, 0.789);
+  text-shadow: 0.5px 0.5px black;
+}
+
+.notesContainer p {
+  font-size: 1rem;
+  color: black;
+  text-shadow: none;
+  padding: 0;
+}
+
+.archiveNoteContainer p {
+  font-size: 1rem;
+  color: black;
+  text-shadow: none;
+}
+
+.trashNoteContainer p {
+  font-size: 1rem;
+  color: black;
+  text-shadow: none;
+}

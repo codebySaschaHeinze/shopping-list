@@ -1,1 +1,78 @@
 /* Für Komponenten (Kleinteile wie Buttons usw) */
+button {
+  height: 30px;
+  width: 110px;
+  text-align: center;
+  background-color: rgba(146, 115, 22, 0.8);
+  border-radius: 5px;
+}
+button:hover {
+  background-color: rgba(125, 98, 17, 0.8);
+  cursor: pointer;
+}
+
+.inputAndAddNoteButton button {
+  height: 30px;
+}
+
+.deleteButton {
+  height: 18px;
+  width: 30px;
+  text-align: center;
+  background-color: rgba(146, 115, 22, 0.8);
+  border-radius: 30%;
+  padding-bottom: 20px;
+  padding-top: 0;
+}
+
+.deleteButton:hover {
+  background-color: rgba(29, 129, 4, 0.67);
+  cursor: pointer;
+}
+
+.archiveItButton {
+  height: 18px;
+  width: 30px;
+  text-align: center;
+  background-color: rgba(146, 115, 22, 0.8);
+  border-radius: 30%;
+  padding-bottom: 20px;
+  padding-top: 0;
+}
+
+.archiveItButton:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(143, 13, 13);
+  cursor: pointer;
+}
+
+.getNoteBackButton {
+  height: 23px;
+  width: 30px;
+  text-align: center;
+  background-color: rgba(146, 115, 22, 0.8);
+  border-radius: 30%;
+  padding-bottom: 0px;
+}
+
+.getNoteBackButton:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(29, 129, 4, 0.67);
+  cursor: pointer;
+}
+
+.deleteItButton {
+  height: 18px;
+  width: 30px;
+  text-align: center;
+  background-color: rgba(146, 115, 22, 0.8);
+  border-radius: 30%;
+  padding-bottom: 20px;
+  padding-top: 0;
+}
+
+.deleteItButton:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(143, 13, 13);
+  cursor: pointer;
+}

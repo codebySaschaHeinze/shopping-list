@@ -11,10 +11,10 @@ function textIfCorrect() {
   correctValidation.innerHTML = /*html*/ `
       <input id="noteInputBox" type="text" maxlength="30"
         placeholder="Ich brauche..."
-      />
-      <input class="amountInputBox" id="amountInputBox" type="number" max="50" placeholder="Menge"
-      />
-      <button onclick="addNoteAndAmount()">dazu"
+        />
+        <input class="amountInputBox" id="amountInputBox" type="number" max="50" placeholder="Menge"
+        />
+        <button onclick="addNoteAndAmount()">dazu"
       </button>`;
 }
 
@@ -33,10 +33,10 @@ function getArchiveNoteTemplate(indexArchiveNote) {
 
 function getTrashDeletedTemplate(indexTrashNote) {
   return /*html*/ `
-        <div class="trashNoteContainer">
-          <p>${trashAmounts[indexTrashNote]} x ${trashNotes[indexTrashNote]}
-          </p>
-          <button onclick="deleteTrashNotesAndAmount(${indexTrashNote})" class="deleteItButton">&#x2718;
-          </button>
-        </div>`;
+      <div class="trashNoteContainer">
+        <p>${trashAmounts[indexTrashNote]} x ${trashNotes[indexTrashNote]}
+        </p>
+        <button onclick="deleteTrashNotesAndAmount(${indexTrashNote})" class="deleteItButton">&#x2718;
+        </button>
+      </div>`;
 }
