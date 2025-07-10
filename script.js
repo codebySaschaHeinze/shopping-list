@@ -108,8 +108,8 @@ function addNoteAndAmount() {
 
 function checkNote(indexNote) {
   let archiveNote = notes.splice(indexNote, 1)[0];
-  let archiveAmount = amounts.splice(indexNote, 1)[0];
   archiveNotes.push(archiveNote);
+  let archiveAmount = amounts.splice(indexNote, 1)[0];
   archiveAmounts.push(archiveAmount);
   saveAllToLocalStorage();
   renderNotes();
@@ -137,8 +137,10 @@ function noteAndAmountToArchive(indexArchiveNote) {
 }
 
 function getNoteBack(indexArchiveNote) {
-  notes.push(archiveNotes.splice(indexArchiveNote, 1)[0]);
-  amounts.push(archiveAmounts.splice(indexArchiveNote, 1)[0]);
+  let note = archiveNotes.splice(indexArchiveNote, 1)[0];
+  notes.push(note);
+  let amount = archiveAmounts.splice(indexArchiveNote, 1)[0];
+  amounts.push(amount);
   saveAllToLocalStorage();
   renderNotes();
   renderArchiveNotes();
@@ -157,8 +159,10 @@ function renderTrashNotes() {
 }
 
 function noteAndAmountToTrash(indexToTrash) {
-  trashNotes.push(archiveNotes.splice(indexToTrash, 1)[0]);
-  trashAmounts.push(archiveAmounts.splice(indexToTrash, 1)[0]);
+  let noteToTrash = archiveNotes.splice(indexToTrash, 1)[0];
+  trashNotes.push(noteToTrash);
+  let amountToTrash = archiveAmounts.splice(indexToTrash, 1)[0];
+  trashAmounts.push(amountToTrash);
   saveAllToLocalStorage();
   renderArchiveNotes();
   renderTrashNotes();
