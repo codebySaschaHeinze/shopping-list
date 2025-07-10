@@ -1,7 +1,7 @@
 function getNoteTemplate(indexNote) {
   return /*html*/ `
       <div 
-        class="notesContainer"><p>${amounts[indexNote]} x ${notes[indexNote]}</p>
+        class="notesContainer"><p>${allNotes.amounts[indexNote]} x ${allNotes.notes[indexNote]}</p>
         <button onclick="checkNote(${indexNote})" class="deleteButton">&#x2714;</button>
       </div>`;
 }
@@ -21,7 +21,7 @@ function textIfCorrect() {
 function getArchiveNoteTemplate(indexArchiveNote) {
   return /*html*/ `
       <div class="archiveNoteContainer">
-        <p>${archiveAmounts[indexArchiveNote]} x ${archiveNotes[indexArchiveNote]}
+        <p>${allNotes.archiveAmounts[indexArchiveNote]} x ${allNotes.archiveNotes[indexArchiveNote]}
         </p>
         <div class="getBackAndToTrashButton"><button onclick="getNoteBack(${indexArchiveNote})" class="getNoteBackButton">&#x21BA;
         </button>
@@ -34,7 +34,7 @@ function getArchiveNoteTemplate(indexArchiveNote) {
 function getTrashDeletedTemplate(indexTrashNote) {
   return /*html*/ `
       <div class="trashNoteContainer">
-        <p>${trashAmounts[indexTrashNote]} x ${trashNotes[indexTrashNote]}
+        <p>${allNotes.trashAmounts[indexTrashNote]} x ${allNotes.trashNotes[indexTrashNote]}
         </p>
         <button onclick="deleteTrashNotesAndAmount(${indexTrashNote})" class="deleteItButton">&#x2718;
         </button>
