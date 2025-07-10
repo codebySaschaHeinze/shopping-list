@@ -2,20 +2,8 @@ function getNoteTemplate(indexNote) {
   return /*html*/ `
       <div 
         class="notesContainer"><p>${allNotes.amounts[indexNote]} x ${allNotes.notes[indexNote]}</p>
-        <button onclick="checkNote(${indexNote})" class="deleteButton">&#x2714;</button>
+        <button onclick="noteAndAmountToArchive(${indexNote})" class="deleteButton">&#x2714;</button>
       </div>`;
-}
-
-function textIfCorrect() {
-  let correctValidation = document.getElementById("input-an-add-note-button");
-  correctValidation.innerHTML = /*html*/ `
-      <input id="note-input-box" type="text" maxlength="30"
-        placeholder="Ich brauche..."
-        />
-        <input class="amount-input-box" id="amount-input-box" type="number" max="50" placeholder="Menge"
-        />
-        <button onclick="addNoteAndAmount()">dazu"
-      </button>`;
 }
 
 function getArchiveNoteTemplate(indexArchiveNote) {
@@ -39,4 +27,16 @@ function getTrashDeletedTemplate(indexTrashNote) {
         <button onclick="deleteTrashNotesAndAmount(${indexTrashNote})" class="deleteItButton">&#x2718;
         </button>
       </div>`;
+}
+
+function textIfCorrect() {
+  let correctValidation = document.getElementById("input-an-add-note-button");
+  correctValidation.innerHTML = /*html*/ `
+      <input id="note-input-box" type="text" maxlength="30"
+        placeholder="Ich brauche..."
+        />
+        <input class="amount-input-box" id="amount-input-box" type="number" max="50" placeholder="Menge"
+        />
+        <button onclick="addNoteAndAmount()">dazu"
+      </button>`;
 }
