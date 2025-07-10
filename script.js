@@ -86,8 +86,8 @@ function getTrashAmountsFromLocalStorage() {
 // Funktion um "getNoteTemplate"-Template anzuzeigen
 function renderNotes() {
   // Holt sich Element aus html und speichert es in "contentRef"...
-  let contentRef = document.getElementById("notesContent");
-  // leert danach "notesContent"
+  let contentRef = document.getElementById("notes-content");
+  // leert danach "notes-content"
   contentRef.innerHTML = "";
   // geht alle Notizen durch
   for (let indexNote = 0; indexNote < notes.length; indexNote++) {
@@ -98,10 +98,10 @@ function renderNotes() {
 
 // Informationen aus den Inputboxen
 function addNoteAndAmount() {
-  let noteInputRef = document.getElementById("noteInputBox");
+  let noteInputRef = document.getElementById("note-input-box");
   let noteInput = noteInputRef.value;
 
-  let noteAmountRef = document.getElementById("amountInputBox");
+  let noteAmountRef = document.getElementById("amount-input-box");
   let noteAmount = noteAmountRef.value;
   clearWarning();
 
@@ -112,12 +112,12 @@ function addNoteAndAmount() {
   }
   // Warnung falls Bedingung von oben nicht erfüllt
   function warningIfInputNotCorrect() {
-    let warningRef = document.getElementById("warningText");
+    let warningRef = document.getElementById("warning-text");
     warningRef.innerHTML = "Bitte beide Felder ausfüllen";
   }
   // Leer falls Bedingung von oben erüllt wurde
   function clearWarning() {
-    let warningRef = document.getElementById("warningText");
+    let warningRef = document.getElementById("warning-text");
     warningRef.innerHTML = "";
   }
 
@@ -142,7 +142,7 @@ function checkNote(indexNote) {
 }
 
 function renderArchiveNotes() {
-  let archiveContentRef = document.getElementById("archiveContent");
+  let archiveContentRef = document.getElementById("archive-content");
   archiveContentRef.innerHTML = "";
 
   for (
@@ -175,7 +175,7 @@ function getNoteBack(indexArchiveNote) {
 }
 
 function renderTrashNotes() {
-  let trashContentRef = document.getElementById("trashContent");
+  let trashContentRef = document.getElementById("trash-content");
   trashContentRef.innerHTML = "";
   for (
     let indexTrashNote = 0;

@@ -7,23 +7,23 @@ body {
   background-color: rgb(86, 147, 187);
 }
 
-.needListAndBuyedList {
+.need-list-and-buyed-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.amountInputBox {
+.amount-input-box {
   width: 70px;
 }
 
-.inputAndAddNoteButton {
+.input-an-add-note-button {
   width: 280px;
   display: flex;
   justify-content: center;
 }
 
-.inputAndAddNoteButton input {
+.input-an-add-note-button input {
   height: 30px;
 }
 
@@ -57,19 +57,19 @@ body {
   gap: 5px;
 }
 
-.notesContent {
+.notes-content {
   width: clamp(280px, 40vw, 500px);
   background-color: rgb(101, 153, 188);
   border-radius: 7px;
 }
 
-.archiveContent {
+.archive-content {
   width: clamp(280px, 40vw, 500px);
   background-color: rgb(101, 153, 188);
   border-radius: 7px;
 }
 
-.trashContent {
+.trash-content {
   width: clamp(280px, 40vw, 500px);
   background-color: rgb(101, 153, 188);
   border-radius: 7px;

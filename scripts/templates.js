@@ -7,12 +7,12 @@ function getNoteTemplate(indexNote) {
 }
 
 function textIfCorrect() {
-  let correctValidation = document.getElementById("inputAndAddNoteButton");
+  let correctValidation = document.getElementById("input-an-add-note-button");
   correctValidation.innerHTML = /*html*/ `
-      <input id="noteInputBox" type="text" maxlength="30"
+      <input id="note-input-box" type="text" maxlength="30"
         placeholder="Ich brauche..."
         />
-        <input class="amountInputBox" id="amountInputBox" type="number" max="50" placeholder="Menge"
+        <input class="amount-input-box" id="amount-input-box" type="number" max="50" placeholder="Menge"
         />
         <button onclick="addNoteAndAmount()">dazu"
       </button>`;

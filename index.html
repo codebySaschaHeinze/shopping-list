@@ -19,16 +19,16 @@
   </head>
   <body onload="init()">
     <h1>Einkaufsliste</h1>
-    <div class="inputAndAddNoteButton" id="inputAndAddNoteButton">
+    <div class="input-an-add-note-button" id="input-an-add-note-button">
       <input
-        id="noteInputBox"
+        id="note-input-box"
         type="text"
         maxlength="30"
         placeholder="Ich brauche..."
       />
       <input
-        class="amountInputBox"
-        id="amountInputBox"
+        class="amount-input-box"
+        id="amount-input-box"
         type="number"
         max="50"
         placeholder="Menge"
@@ -36,14 +36,14 @@
 
       <button onclick="addNoteAndAmount()">dazu</button>
     </div>
-    <p class="warningText" id="warningText"></p>
-    <div class="needListAndBuyedList">
+    <p class="warning-text" id="warning-text"></p>
+    <div class="need-list-and-buyed-list">
       <p>Muss gekauft werden</p>
-      <div class="notesContent" id="notesContent"></div>
+      <div class="notes-content" id="notes-content"></div>
       <p>Archiv</p>
-      <div class="archiveContent" id="archiveContent"></div>
+      <div class="archive-content" id="archive-content"></div>
       <p>Papierkorb</p>
-      <div class="trashContent" id="trashContent"></div>
+      <div class="trash-content" id="trash-content"></div>
     </div>
   </body>
 </html>
