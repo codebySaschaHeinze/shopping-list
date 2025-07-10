@@ -115,7 +115,7 @@ function addNoteAndAmount() {
     let warningRef = document.getElementById("warningText");
     warningRef.innerHTML = "Bitte beide Felder ausfüllen";
   }
-
+  // Leer falls Bedingung von oben erüllt wurde
   function clearWarning() {
     let warningRef = document.getElementById("warningText");
     warningRef.innerHTML = "";
