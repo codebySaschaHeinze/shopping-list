@@ -2,7 +2,8 @@ function getNoteTemplate(indexNote) {
   return /*html*/ `
       <div 
         class="notesContainer"><p>${allNotes.amounts[indexNote]} x ${allNotes.notes[indexNote]}</p>
-        <button onclick="noteAndAmountToArchive(${indexNote})" class="deleteButton">&#x2714;</button>
+         <button onclick="moveNotesToArchive(${indexNote}, 'notes', 'amounts', 'archiveNotes', 'archiveAmounts')" class="deleteButton">&#x2714;
+         </button>
       </div>`;
 }
 
@@ -11,20 +12,19 @@ function getArchiveNoteTemplate(indexArchiveNote) {
       <div class="archiveNoteContainer">
         <p>${allNotes.archiveAmounts[indexArchiveNote]} x ${allNotes.archiveNotes[indexArchiveNote]}
         </p>
-        <div class="getBackAndToTrashButton"><button onclick="getNoteBack(${indexArchiveNote})" class="getNoteBackButton">&#x21BA;
+        <div class="getBackAndToTrashButton"><button onclick="moveArchiveBackToNotes(${indexArchiveNote}, 'archiveNotes', 'archiveAmounts', 'notes', 'amounts')" class="getNoteBackButton">&#x21BA;
         </button>
-        <button  class="archiveItButton" onclick="noteAndAmountToTrash(${indexArchiveNote})">&#x2718;
+        <button onclick="moveArchiveToTrash(${indexArchiveNote}, 'archiveNotes', 'archiveAmounts', 'trashNotes', 'trashAmounts')" class="archiveItButton">&#x2718;
         </button>
         </div>
       </div>`;
 }
-
 function getTrashDeletedTemplate(indexTrashNote) {
   return /*html*/ `
       <div class="trashNoteContainer">
         <p>${allNotes.trashAmounts[indexTrashNote]} x ${allNotes.trashNotes[indexTrashNote]}
         </p>
-        <button onclick="deleteTrashNotesAndAmount(${indexTrashNote})" class="deleteItButton">&#x2718;
+        <button onclick="deleteTrashNotesAndAmount(${indexTrashNote}, 'trashNotes', 'trashAmounts')" class="deleteItButton">&#x2718;
         </button>
       </div>`;
 }
