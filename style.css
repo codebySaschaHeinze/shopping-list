@@ -17,13 +17,13 @@ body {
   width: 70px;
 }
 
-.input-an-add-note-button {
+.input-an-add-note-button-container {
   width: 280px;
   display: flex;
   justify-content: center;
 }
 
-.input-an-add-note-button input {
+.input-an-add-note-button-container input {
   height: 30px;
 }
 

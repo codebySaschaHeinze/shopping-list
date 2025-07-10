@@ -30,7 +30,9 @@ function getTrashDeletedTemplate(indexTrashNote) {
 }
 
 function textIfCorrect() {
-  let correctValidation = document.getElementById("input-an-add-note-button");
+  let correctValidation = document.getElementById(
+    "input-an-add-note-button-container"
+  );
   correctValidation.innerHTML = /*html*/ `
       <input id="note-input-box" type="text" maxlength="30"
         placeholder="Ich brauche..."

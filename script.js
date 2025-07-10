@@ -11,7 +11,7 @@ function init() {
   getAllFromLocalStorage();
   renderAll();
 }
-
+// moveNotesToArchive(aus welchem Index, StartKey, StartKey, ZielKey, ZielKey) (entsprechende onclick() anschauen, dann weißt du, an welcher stelle was ist)
 function moveNotesToArchive(
   indexNote,
   startKeyNotes,
@@ -19,8 +19,11 @@ function moveNotesToArchive(
   destinationKeyArchiveNotes,
   destinationKeyArchiveAmounts
 ) {
+  // noteToArchive beinhaltet das Raussplicen eines Elementes* aus dem Index "indexNote" (steckt in "allNotes")
   let noteToArchive = allNotes[startKeyNotes].splice(indexNote, 1);
+  // das rausgesplicete Element* wird in den ZielKey gepusht (von)
   allNotes[destinationKeyArchiveNotes].push(noteToArchive[0]);
+
   let amountToArchive = allNotes[startKeyAmounts].splice(indexNote, 1);
   allNotes[destinationKeyArchiveAmounts].push(amountToArchive[0]);
   saveAllToLocalStorage();
@@ -149,13 +152,6 @@ function warningIfInputNotCorrect() {
 function clearWarning() {
   let warningRef = document.getElementById("warning-text");
   warningRef.innerHTML = "";
-}
-
-function deleteTrashNotesAndAmount(indexTrashNote) {
-  allNotes.trashNotes.splice(indexTrashNote, 1);
-  allNotes.trashAmounts.splice(indexTrashNote, 1);
-  saveAllToLocalStorage();
-  renderAll();
 }
 
 function renderAll() {
